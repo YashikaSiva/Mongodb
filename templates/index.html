@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Database</title>
+</head>
+<body>
+    <h2>Student Database</h2>
+
+    <form method="POST">
+        Roll Number:
+        <input type="number" name="roll" required><br><br>
+
+        Name:
+        <input type="text" name="name" required><br><br>
+
+        Department:
+        <input type="text" name="dept" required><br><br>
+
+        <button name="action" value="Insert">Insert</button>
+        <button name="action" value="Update">Update</button>
+        <button name="action" value="Delete">Delete</button>
+    </form>
+
+    <h3>All Students</h3>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Roll</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+
+        {% for s in data %}
+        <tr>
+            <td>{{ s.roll }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.dept }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
